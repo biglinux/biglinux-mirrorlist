@@ -5,6 +5,12 @@ Mirrorlists for the BigLinux pacman repositories
 server URLs, like the Arch Linux and Manjaro repositories:
 
 ```ini
+[biglinux-priority]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/biglinux-priority-mirrorlist
+
+# ... Manjaro repositories: [core], [extra], [multilib] ...
+
 [biglinux-testing]
 SigLevel = PackageRequired
 Include = /etc/pacman.d/biglinux-testing-mirrorlist
@@ -18,17 +24,20 @@ SigLevel = PackageRequired
 Include = /etc/pacman.d/biglinux-extra-mirrorlist
 ```
 
+`biglinux-priority` comes **before** the Manjaro repositories: it holds the
+BigLinux builds of packages that also exist in Manjaro, so ours win.
 `biglinux-testing` is optional: it receives packages before `biglinux-stable`.
 `biglinux-extra` holds AUR and third-party packages.
 
 There is one file per repository because pacman only expands `$repo` (the
 section name, e.g. `biglinux-stable`) and `$arch` in a server URL, while the
-directories on the server are `testing`, `stable` and `extra`.
+directories on the server are `priority`, `testing`, `stable` and `extra`.
 
 ## Files
 
 | File | Installed to |
 |---|---|
+| `biglinux-priority-mirrorlist` | `/etc/pacman.d/biglinux-priority-mirrorlist` |
 | `biglinux-testing-mirrorlist` | `/etc/pacman.d/biglinux-testing-mirrorlist` |
 | `biglinux-stable-mirrorlist` | `/etc/pacman.d/biglinux-stable-mirrorlist` |
 | `biglinux-extra-mirrorlist` | `/etc/pacman.d/biglinux-extra-mirrorlist` |

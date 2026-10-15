@@ -11,14 +11,15 @@ license=('MIT')
 url="https://github.com/biglinux/${pkgname}"
 source=("git+${url}.git")
 sha256sums=('SKIP')
-backup=('etc/pacman.d/biglinux-testing-mirrorlist'
+backup=('etc/pacman.d/biglinux-priority-mirrorlist'
+        'etc/pacman.d/biglinux-testing-mirrorlist'
         'etc/pacman.d/biglinux-stable-mirrorlist'
         'etc/pacman.d/biglinux-extra-mirrorlist')
 
 package() {
   cd "${srcdir}/${pkgname}"
   local repo
-  for repo in testing stable extra; do
+  for repo in priority testing stable extra; do
     install -Dm644 "biglinux-${repo}-mirrorlist" "${pkgdir}/etc/pacman.d/biglinux-${repo}-mirrorlist"
   done
 }

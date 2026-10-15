@@ -1,0 +1,12 @@
+##
+## BigLinux repository mirrorlist: biglinux-priority
+##
+## Used by /etc/pacman.conf:
+##   [biglinux-priority]
+##   SigLevel = PackageRequired
+##   Include = /etc/pacman.d/biglinux-priority-mirrorlist
+##
+## pacman tries the servers from top to bottom.
+##
+
+Server = https://packages.biglinux.com.br/priority/$arch
