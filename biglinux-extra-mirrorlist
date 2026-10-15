@@ -1,0 +1,12 @@
+##
+## BigLinux repository mirrorlist: biglinux-extra
+##
+## Used by /etc/pacman.conf:
+##   [biglinux-extra]
+##   SigLevel = PackageRequired
+##   Include = /etc/pacman.d/biglinux-extra-mirrorlist
+##
+## pacman tries the servers from top to bottom.
+##
+
+Server = https://packages.biglinux.com.br/extra/$arch

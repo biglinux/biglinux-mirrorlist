@@ -1,0 +1,12 @@
+##
+## BigLinux repository mirrorlist: biglinux-stable
+##
+## Used by /etc/pacman.conf:
+##   [biglinux-stable]
+##   SigLevel = PackageRequired
+##   Include = /etc/pacman.d/biglinux-stable-mirrorlist
+##
+## pacman tries the servers from top to bottom.
+##
+
+Server = https://packages.biglinux.com.br/stable/$arch

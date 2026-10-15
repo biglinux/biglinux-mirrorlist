@@ -1,0 +1,12 @@
+##
+## BigLinux repository mirrorlist: biglinux-testing
+##
+## Used by /etc/pacman.conf:
+##   [biglinux-testing]
+##   SigLevel = PackageRequired
+##   Include = /etc/pacman.d/biglinux-testing-mirrorlist
+##
+## pacman tries the servers from top to bottom.
+##
+
+Server = https://packages.biglinux.com.br/testing/$arch
